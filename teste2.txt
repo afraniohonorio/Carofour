@@ -1,6 +1,0 @@
-<<<<<<< HEAD
-arquivo teste
-=======
-arquivo teste
-testado Iago
->>>>>>> 770f894397433642ec6425233ef2405a8f54fcbc
