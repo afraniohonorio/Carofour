@@ -1,16 +1,29 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.8.2.min.js")" type="text/javascript"></script>
 </head>
 <body>
-    @RenderBody()
+    <div id="header">
+        <h1><a href="/">Carofour produtos e alimentos orgânicos</a></h1>
+        <ul id="navlist">
+            <li class="first"><a href="@Url.Content("~")"id="current">Home</a></li>
+            <li><a href="@Url.Content("~/Loja/")">Loja</a></li>
+            @*<li>@{Html.RenderAction("CartSummary", "Carrinho");}</li>*@
+            <li><a href="@Url.Content("~/StoreManager/")">Logar</a></li>
+        </ul>
+    </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
+    @*@{Html.RenderAction("GenreMenu", "Loja");}*@
+
+    <div id="main">
+        @RenderBody()
+    </div>
+
+     <div id="footer">
+        Carofour 2012 - contato: contato@carofour.com.br
+    </div>
 </body>
 </html>

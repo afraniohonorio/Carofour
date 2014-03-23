@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Carofour.Models.Categoria>
+
+@{
+    ViewBag.Title = "Carofour";
+}
+<h3>Categorias</h3>
+
+<p>
+    Selecione entre @Model.Count() categorias:
+</p>
+
+<div id="menu">
+    <p>
+        Somos o Grupo Carofour, pioneiros no varejo brasileiro. Desde de 1975 no Brasil,
+        reunimos uma equipe com mais de 70.000 colaboradores que representam a diversidade
+        deste país. Junto com os nossos fornecedores e parceiros, estamos comprometidos
+        em satisfazer e encantar os consumidores todos os dias, construindo a nossa história
+        com a sociedade. Nas mais de 200 lojas e nos diferentes pontos de contatos, nos
+        relacionamos com mais de um milhão de pessoas todos os dias. As pessoas estão no
+        centro do nosso negócio e, por isso, estamos abertos ao aprendizado constante e
+        a buscar uma melhor maneira em tudo que fazemos.
+    </p>
+</div>
+
+<div id="content">
+    <ul id="album-list">
+        @foreach (var categoria in Model)
+        {
+            <li>
+                <a href="@Url.Action("Details", new { id = categoria.id })">
+                    <img src="~/Content/Images/122_77.jpg" />
+                    @*<img alt="@categoria.nome" src="@categoria.urlImagem" />*@
+                    <span>@categoria.nome</span>
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+
+
