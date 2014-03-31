@@ -236,6 +236,7 @@
     <Content Include="Views\Loja\Detalhes.cshtml" />
     <Content Include="Views\Loja\Navegar.cshtml" />
     <Content Include="Views\Loja\Indice.cshtml" />
+    <Content Include="Views\Loja\FecharCompra.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
