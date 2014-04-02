@@ -3,10 +3,12 @@
 @{
     ViewBag.Title = "Carofour";
 }
+@Styles.Render("~/Content/style.css");
+
 <h3>Categorias</h3>
 
 <p>
-    Selecione entre @Model.Count() categorias:
+    Selecione entre as @Model.Count() categorias:
 </p>
 
 <div id="menu">

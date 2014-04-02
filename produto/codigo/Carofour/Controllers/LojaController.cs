@@ -35,6 +35,11 @@ namespace Carofour.Controllers
             var modeloCategoria = new Categoria { nome = categoria};
             return View(modeloCategoria);
         }
+
+        public ActionResult FecharCompra()
+        {
+            return View();
+        }
         
     }
 }

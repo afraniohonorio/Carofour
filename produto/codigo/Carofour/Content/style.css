@@ -4,6 +4,12 @@ div.titulo
     text-align: center;
 }
 
+#header
+{
+    font-family: Arial,'Times New Roman',sans-serif;
+    color: black;
+}
+
 .titulo span
 {
     font-family: Comic Sans MS;
@@ -18,49 +24,73 @@ div.titulo
 
 .corpo
 {
-    text-align: center;
     background-image: url(/img/background.jpeg);
     background-position: center; /*background-repeat: no-repeat;*/
 }
 
 .main-content
 {
-    color: white;
+    color: black;
     text-align: center;
+    line-height: 20px;
     width: 850px;
     border: 1px solid red;
     height: 400px;
     margin: 20px auto;
 }
 
-.main-content .left
-{
-    width: 400px;
-    float: left;
-    border: 1px solid red;
-    height: 300px;
-}
+    .main-content .left
+    {
+        width: 400px;
+        float: left;
+        border: 1px solid red;
+        height: 300px;
+    }
 
-.main-content .right
-{
-    float: right;
-    border: 1px solid red;
-    height: 300px;
-    width: 400px;
-}
+    .main-content .right
+    {
+        float: right;
+        border: 1px solid red;
+        height: 300px;
+        width: 400px;
+    }
 
-.main-content .right span
-{
-    float: left; /*display: inline-block;*/
-    width: 150px;
-    height: 118px;
-    padding: 15px;
-    border: 1px solid red;
-}
+        .main-content .right span
+        {
+            float: left; /*display: inline-block;*/
+            width: 150px;
+            height: 118px;
+            padding: 15px;
+            border: 1px solid red;
+        }
 
 .footer
 {
     bottom: 0;
     text-align: center;
     color: white;
+}
+
+label
+{
+    display: inline-block;
+    width: 150px;
+}
+
+input
+{
+    margin-top: 10px;
+}
+
+.dados
+{
+    font-family: Arial,'Times New Roman',sans-serif;
+    font-size: 15px;
+    margin-left: 100px;
+    padding:2px 5px 20px 10px;
+    margin-left:5px;
+    margin-top:40px;
+    margin-right:980px;   
+    margin-bottom:10px;  
+    border:1px solid;
 }
