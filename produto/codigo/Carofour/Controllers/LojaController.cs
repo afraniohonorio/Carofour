@@ -32,14 +32,31 @@ namespace Carofour.Controllers
 
         public ActionResult Navegar(string categoria)
         {
-            var modeloCategoria = new Categoria { nome = categoria};
+            var modeloCategoria = new Categoria { nome = categoria };
             return View(modeloCategoria);
         }
 
-        public ActionResult FecharCompra()
+        public ActionResult FecharCompra(string nome, string email, string senha,
+            DateTime dataNascimento, char sexo, string endereco, string telefone)
         {
-            return View();
+
+            var lista = new List<Cliente>();
+
+            Cliente cliente = new Cliente
+            {
+                nomeCompleto = nome,
+                email = email,
+                senha = senha,
+                dataNascimento = dataNascimento,
+                sexo = sexo,
+                endereco = endereco,
+                telefone = telefone
+            };
+
+            lista.Add(cliente);
+
+            return View(cliente);
         }
-        
+
     }
 }

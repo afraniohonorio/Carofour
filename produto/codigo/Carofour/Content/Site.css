@@ -180,6 +180,18 @@ h2, h3
 h3
 {
 	color: #9B9993;
+    
+}
+
+.teste
+{
+     text-align:center;
+     margin-left:40px;
+}
+
+.centralizar
+{
+    text-align:center;
 }
 
 #header h1 a, h3 em
