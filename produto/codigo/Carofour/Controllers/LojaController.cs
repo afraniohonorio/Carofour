@@ -37,7 +37,7 @@ namespace Carofour.Controllers
         }
 
         public ActionResult FecharCompra(string nome, string email, string senha,
-            DateTime dataNascimento, char sexo, string endereco, string telefone)
+            string dataNascimento, string sexo, string endereco, string telefone)
         {
 
             var lista = new List<Cliente>();
