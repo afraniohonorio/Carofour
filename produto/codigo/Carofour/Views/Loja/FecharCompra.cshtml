@@ -5,9 +5,6 @@
     ViewBag.Title = "Fechamento da Compra";
 }
 
-
-
-
 <form>
     <div class="dados">
 
@@ -15,12 +12,12 @@
 
         @using (Html.BeginForm())
         {
-            @Html.LabelFor(x => x.nomeCompleto)
-
-            @Html.TextBoxFor(x => x.nomeCompleto);
-            @Html.LabelFor(x => x.email)
-            @Html.TextBoxFor(x => x.email);
-            @Html.LabelFor(x => x.dataNascimento)
+            
+            @Html.Label("Nome Completo")
+            @Html.TextBoxFor(x => x.nomeCompleto)            
+            @Html.Label("E-mail")
+            @Html.TextBoxFor(x => x.email)
+            @Html.Label("Data de Nascimento")
             @Html.TextBoxFor(x => x.dataNascimento)
             @Html.LabelFor(x => x.sexo)
             @Html.TextBoxFor(x => x.sexo)

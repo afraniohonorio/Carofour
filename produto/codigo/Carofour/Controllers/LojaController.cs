@@ -36,26 +36,13 @@ namespace Carofour.Controllers
             return View(modeloCategoria);
         }
 
-        public ActionResult FecharCompra(string nome, string email, string senha,
-            string dataNascimento, string sexo, string endereco, string telefone)
+        public ActionResult FecharCompra(Cliente cliente)
         {
-
-            var lista = new List<Cliente>();
-
-            Cliente cliente = new Cliente
-            {
-                nomeCompleto = nome,
-                email = email,
-                senha = senha,
-                dataNascimento = dataNascimento,
-                sexo = sexo,
-                endereco = endereco,
-                telefone = telefone
-            };
-
-            lista.Add(cliente);
-
-            return View(cliente);
+            List<Cliente> c = new List<Cliente>();
+            c.Add(cliente);
+            ViewBag.Mensagem = "O Cliente foi cadastrado com sucesso !";
+            return View();
+           
         }
 
     }
