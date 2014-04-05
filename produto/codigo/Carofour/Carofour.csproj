@@ -147,6 +147,7 @@
     <Content Include="Content\Images\122_77.jpg" />
     <Content Include="Content\Images\background.jpeg" />
     <Content Include="Content\Images\carnes122_77.jpg" />
+    <Content Include="Content\Images\Carofour.jpg" />
     <Content Include="Content\Images\home-showcase.png" />
     <Content Include="Content\Images\Hortifrutgranjeiros122_77.jpg" />
     <Content Include="Content\Images\laticinios122_77.jpg" />
@@ -243,7 +244,6 @@
     <Content Include="Views\Loja\Indice.cshtml" />
     <Content Include="Views\Loja\FecharCompra.cshtml" />
     <Content Include="Views\Categoria\Index.cshtml" />
-    <Content Include="Views\Categoria\ExibirProdutosCategoria.cshtml" />
     <Content Include="Views\Categoria\DetalheCategoria.cshtml" />
   </ItemGroup>
   <ItemGroup>
