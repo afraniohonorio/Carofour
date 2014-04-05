@@ -1,0 +1,45 @@
+﻿@model Carofour.Models.Categoria
+@{
+    ViewBag.Title = "DetalheCategoria";
+}
+<h2>
+    DetalheCategoria</h2>
+<ul>
+    @foreach (var x in Model.produtos)
+    {
+        <table>
+            <thead>
+                <tr>
+                </tr>
+                <tr>
+                    <th>
+                        Nome/Descrição
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Preço (R$)
+                    </th>
+                </tr>
+                <tr>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @x.nome+"-"+@x.descricao
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @x.preco
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @x.preco
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    }

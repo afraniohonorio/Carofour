@@ -10,6 +10,7 @@ namespace Carofour.Models
         public int id { get; set; }
         public string nome { get; set; }
         public string urlImagem { get; set; }
-        //public virtual List<Produto> produtos { get; set; }
+        public virtual List<Produto> produtos { get; set; }
+        public string href { get; set; }
     }
 }

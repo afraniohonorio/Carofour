@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Carofour.Models;
 
 namespace Carofour.Controllers
 {
@@ -11,10 +12,9 @@ namespace Carofour.Controllers
         //
         // GET: /Produto/
 
-        public ActionResult Index()
-        {
-            return View();
-        }
+        //public ActionResult Index()
+        //{
 
+        //}
     }
 }

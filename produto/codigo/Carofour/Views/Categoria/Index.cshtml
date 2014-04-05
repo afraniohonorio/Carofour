@@ -4,11 +4,11 @@
     ViewBag.Title = "Index";
 }
 
-<h3 class="centro">Categorias</h3>
+@*<h3 class="centro">Categorias</h3>*@
 
-<p class="centro">
+@*<p class="centro">
     Selecione entre @Model.Count() categorias:
-</p>
+</p>*@
 
 <div class="main-content">
     <div class="left">
@@ -22,14 +22,13 @@
             a buscar uma melhor maneira em tudo que fazemos.</h4>
     </div>
     <div class="right">
+    @foreach (var x in Model)
+    {
         <span>
-            <img src="/Content/Images/122_77.jpg" title="frutas" />
-        </span><span>
-            <img src="/Content/Images/122_77.jpg" title="frutas" />
-        </span><span>
-            <img src="/Content/Images/122_77.jpg" title="frutas" />
-        </span><span>
-            <img src="/Content/Images/122_77.jpg" title="frutas" />
+            <a href="@x.href">
+            <img src="@x.urlImagem" title="@x.nome" />
+            <label>@x.nome</label></a>
         </span>
+    }
     </div>
 </div>

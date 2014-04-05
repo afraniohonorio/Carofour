@@ -7,7 +7,7 @@ using Carofour.Models;
 
 namespace Carofour.Controllers
 {
-    public class LojaController : Controller
+    public class CarrinhoController : Controller
     {
         //
         // GET: /Store/

@@ -12,6 +12,5 @@ namespace Carofour.Models
         public string descricao { get; set; }
         public double preco { get; set; }
         public string urlImagem { get; set; }
-        public Categoria categoria { get; set; }
     }
 }

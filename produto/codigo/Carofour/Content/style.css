@@ -7,7 +7,7 @@ div.titulo
 #header
 {
     font-family: Arial,'Times New Roman',sans-serif;
-    color: black;
+    color: white;
 }
 
 .titulo span
@@ -22,9 +22,9 @@ div.titulo
     vertical-align: middle;
 }
 
-.corpo
+body
 {
-    background-image: url(/img/background.jpeg);
+    background-image: url(/Content/Images/background.jpeg);
     background-position: center; /*background-repeat: no-repeat;*/
 }
 
@@ -34,35 +34,36 @@ div.titulo
     text-align: center;
     line-height: 20px;
     width: 850px;
-    border: 1px solid red;
+    /*border: 1px solid black;*/
     height: 400px;
     margin: 20px auto;
 }
 
-    .main-content .left
-    {
-        width: 400px;
-        float: left;
-        border: 1px solid red;
-        height: 300px;
-    }
+.main-content .left
+{
+    width: 400px;
+    float: left;
+    /*border: 1px solid black;*/
+    height: 300px;
+    color: White;
+}
 
-    .main-content .right
-    {
-        float: right;
-        border: 1px solid red;
-        height: 300px;
-        width: 400px;
-    }
+.main-content .right
+{
+    float: right;
+    /*border: 1px solid black;*/
+    height: 300px;
+    width: 400px;
+}
 
-        .main-content .right span
-        {
-            float: left; /*display: inline-block;*/
-            width: 150px;
-            height: 118px;
-            padding: 15px;
-            border: 1px solid red;
-        }
+.main-content .right span
+{
+    float: left; /*display: inline-block;*/
+    width: 150px;
+    height: 118px;
+    padding: 15px;
+    /*border: 1px solid black;*/
+}
 
 .footer
 {
