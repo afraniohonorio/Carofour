@@ -8,25 +8,14 @@
 <body>
     <div id="header">
         <div class="titulo">
-            <img src="~/Content/Images/logo.png" title="Carofour"/>
+            <img src="~/Content/Images/Carofourm.png" title="Carofour" />
             <span>Carofour produtos e alimentos orgânicos</span>
         </div>
-        
-        @*<ul id="navlist">
-            <li class="first"><a href="@Url.Content("~")"id="current">Home</a></li>
-            <li><a href="@Url.Content("~/Loja/")">Loja</a></li>
-            <li>@{Html.RenderAction("CartSummary", "Carrinho");}</li>
-            <li><a href="@Url.Content("~/StoreManager/")">Logar</a></li>
-        </ul>*@
     </div>
-
-    @*@{Html.RenderAction("GenreMenu", "Loja");}*@
-
     <div id="main" class="corpo">
         @RenderBody()
     </div>
-
-     <div class="footer" id="footer">
+    <div class="footer" id="footer">
         Carofour 2012 - contato: contato@carofour.com.br
     </div>
 </body>
