@@ -5,37 +5,54 @@
     ViewBag.Title = "Fechamento da Compra";
 }
 
+
+<div class="mensagem">
+    @if (TempData["Mensagem"] != null)
+    {
+        <div>@TempData["Mensagem"]</div>
+    }
+</div>
+
 <form>
-    <div class="dados">
-        <h3>Dados do Cliente</h3>
-        <link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />
+    <div class="teste_left">
+        <div class="left">
+            <div class="alinhamento">
+                <h3>Dados do Cliente</h3>
 
-        @using (Html.BeginForm())
-        {
-            @Html.HiddenFor(x => x.id)
-            @Html.Label("Nome Completo:*")
-            @Html.TextBoxFor(x => x.nomeCompleto)   
-            @Html.Label("E-mail:*")
-            @Html.TextBoxFor(x => x.email)
-            @Html.Label("Data de Nascimento*")
-            @Html.TextBoxFor(x => x.dataNascimento)
-            
-            @Html.Label("Sexo:*");
-            @Html.RadioButtonFor(x => x.sexo, "F", new { @class = "teste" })
-            @Html.Label("Feminino", new { @class = "teste" })
-            @Html.RadioButtonFor(x => x.sexo, "M", new { @class = "teste" })
-            @Html.Label("Masculino", new { @class = "teste" })
+
+                @using (Html.BeginForm())
+                {
+                    @Html.HiddenFor(x => x.id)
+                    @Html.Label("Nome Completo:*")
+                    @Html.TextBoxFor(x => x.nomeCompleto)   
+                    @Html.Label("E-mail:*")
+                    @Html.TextBoxFor(x => x.email)
+                    @Html.Label("Data de Nascimento:*")
+                    @Html.TextBoxFor(x => x.dataNascimento, new {@class="campo2"})            
+                    @Html.Label("Sexo:*");
+                    @Html.RadioButtonFor(x => x.sexo, "F", new { @class = "teste" })
+                    @Html.Label("Feminino", new { @class = "teste" })
+                    @Html.RadioButtonFor(x => x.sexo, "M", new { @class = "teste" })
+                    @Html.Label("Masculino", new { @class = "teste" })
            
-            @Html.Label("Endereço:*")
-            @Html.TextBoxFor(x => x.endereco)
-            @Html.Label("Telefone:*")
-            @Html.TextBoxFor(x => x.telefone)
+                    @Html.Label("Endereço:*")
+                    @Html.TextBoxFor(x => x.endereco)
+                    @Html.Label("Telefone:*")
+                    @Html.TextBoxFor(x => x.telefone)
             
 
-            <input type="submit" value="Enviar" name="Enviar" class="botao" />
+                    <input type="submit" value="Enviar" name="Enviar" class="botao" />
  
-        }
-
-
+                }
+            </div>
+        </div>
     </div>
 </form>
+
+<div class="teste_right">
+    <h3>Condições de Compra</h3>
+    <li>Alguns produtos do site estão expostos em tamanho maior ou menor que o natural.</li>
+    <li>A disponibilidade dos produtos está sujeita aos seus respectivos estoques.</li>
+    <li>Respeitar a data de entrega estipulado no site.</li>
+    <li>O cancelamento de sua compra poderá ser efetuada somente antes do envio do pedido.</li>
+</div>

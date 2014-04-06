@@ -10,6 +10,7 @@ div.titulo
     color: white;
 }
 
+
 .titulo span
 {
     font-family: Comic Sans MS;
@@ -39,32 +40,32 @@ body
     margin: 30px auto;
 }
 
-.main-content .left
-{
-    width: 450px;
-    float: left;
-    /*border: 1px solid black;*/
-    height: 300px;
-    color: White;
-    font-size: 20px;
-}
+    .main-content .left
+    {
+        width: 450px;
+        float: left;
+        /*border: 1px solid black;*/
+        height: 300px;
+        color: White;
+        font-size: 20px;
+    }
 
-.main-content .right
-{
-    float: right;
-    /*border: 1px solid black;*/
-    height: 300px;
-    width: 600px;
-}
+    .main-content .right
+    {
+        float: right;
+        /*border: 1px solid black;*/
+        height: 300px;
+        width: 600px;
+    }
 
-.main-content .right span
-{
-    float: left; /*display: inline-block;*/
-    width: 250px;
-    height: 150px;
-    padding: 15px;
-    /*border: 1px solid black;*/
-}
+        .main-content .right span
+        {
+            float: left; /*display: inline-block;*/
+            width: 250px;
+            height: 150px;
+            padding: 15px;
+            /*border: 1px solid black;*/
+        }
 
 .footer
 {
@@ -76,34 +77,70 @@ body
 label
 {
     display: inline-block;
-    width: 150px;
+    width: 155px;
 }
 
 input
 {
     margin-top: 10px;
-    padding-right:78px;
-    margin-bottom:5px;
+    padding-right: 90px;
+    margin-bottom: 5px;
 }
-
-.dados
-{
-    font-family: Arial,'Times New Roman',sans-serif;
-    font-size: 15px;
-    margin-left: 100px;
-    padding: 2px 98px 20px 20px;
-    margin: 100px 750px 10px 90px;
-    border: 1px solid red;
-}
-
-
 
 .botao
 {
-    padding-right:10px;
+    padding-right: 10px;
 }
 
 .teste
 {
-    width:45px;
+    width: 50px;
+}
+
+.mensagem
+{
+    padding-top: 30px;
+}
+
+
+.teste_left
+{
+    font-family: Arial,'Times New Roman',sans-serif;
+    font-size: 16px;
+    color: white;
+    margin-left: 100px;
+    padding: 2px 100px 20px 10px;
+    margin: 15px 700px 10px 90px;
+    /* border: 1px solid red;*/
+    position: absolute;
+    height: 400px;
+}
+
+.alinhamento
+{
+    text-align: left;
+}
+
+h3
+{
+    padding-bottom: 20px;
+    color: blue;
+}
+
+.teste_right
+{
+    color: white;
+    font-family: Arial,'Times New Roman',sans-serif;
+    margin-bottom: 250px;
+    margin-left: 650px;
+    margin-top: 30px;
+    width: 650px;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.campo2
+{
+    font-size: 14px;
+    padding-right: 10px;
 }

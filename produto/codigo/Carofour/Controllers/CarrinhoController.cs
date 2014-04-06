@@ -39,10 +39,14 @@ namespace Carofour.Controllers
         public ActionResult FecharCompra(Cliente cliente)
         {
             List<Cliente> c = new List<Cliente>();
-            c.Add(cliente);
-            ViewBag.Mensagem = "O Cliente foi cadastrado com sucesso !";
+
+            if (cliente.nomeCompleto != null)
+            {
+                c.Add(cliente);
+                TempData["Mensagem"] = "O Cliente foi cadastrado com sucesso !";
+            }
             return View();
-           
+
         }
 
     }
