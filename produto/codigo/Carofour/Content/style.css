@@ -82,6 +82,8 @@ label
 input
 {
     margin-top: 10px;
+    padding-right:78px;
+    margin-bottom:5px;
 }
 
 .dados
@@ -89,15 +91,19 @@ input
     font-family: Arial,'Times New Roman',sans-serif;
     font-size: 15px;
     margin-left: 100px;
-    padding:2px 5px 20px 10px;
-    margin-left:5px;
-    margin-top:40px;
-    margin-right:980px;   
-    margin-bottom:10px;  
-    border:1px solid;
+    padding: 2px 98px 20px 20px;
+    margin: 100px 750px 10px 90px;
+    border: 1px solid red;
 }
 
-.centro{
-    text-align:center;
 
+
+.botao
+{
+    padding-right:10px;
+}
+
+.teste
+{
+    width:45px;
 }
