@@ -25,7 +25,7 @@ namespace Carofour.Controllers
             }},
             
 
-            new Categoria { id = 2, nome = "Carnes", urlImagem = "/Content/Images/Carnes244_154.jpg", href="/Views/Loja/Categoria.cshtml?&categoria=Laticínios",
+            new Categoria { id = 2, nome = "Carnes", urlImagem = "/Content/Images/Carnes244_154.jpg", href="/Categoria/DetalheCategoria?categoria=Carnes",  
                     
             produtos = new List<Produto>
             { 
@@ -33,7 +33,7 @@ namespace Carofour.Controllers
                 new Produto { id=2, nome = "Picanha", descricao = "Picanha bonita", preco = 35.00, urlImagem = ""},
             }},
             
-            new Categoria { id = 3, nome = "Padaria", urlImagem = "/Content/Images/Padaria244_154.jpg", href="/Views/Loja/Categoria.cshtml?&categoria=Laticínios",
+            new Categoria { id = 3, nome = "Padaria", urlImagem = "/Content/Images/Padaria244_154.jpg", href="/Categoria/DetalheCategoria?categoria=Padaria",  
                     
             produtos = new List<Produto>
             { 
@@ -42,7 +42,7 @@ namespace Carofour.Controllers
                 new Produto { id=2, nome = "Carne Moída", descricao = "Carne Moída bonita", preco = 12.30, urlImagem = ""}
             }},
             
-            new Categoria { id = 4, nome = "Hortifrutigranjeiros", urlImagem = "/Content/Images/Hortifrutgranjeiros244_154.jpg", href="/Views/Loja/Categoria.cshtml?&categoria=Laticínios",
+            new Categoria { id = 4, nome = "Hortifrutigranjeiros", urlImagem = "/Content/Images/Hortifrutgranjeiros244_154.jpg", href="/Categoria/DetalheCategoria?categoria=Hortifrutigranjeiros",  
                     
             produtos = new List<Produto>
             { 

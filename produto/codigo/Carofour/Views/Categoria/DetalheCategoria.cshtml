@@ -1,6 +1,6 @@
 ﻿@model Carofour.Models.Categoria
 @{
-    ViewBag.Title = "Produtos da Categoria "+@Model.nome;
+    ViewBag.Title = "Produtos da Categoria " + @Model.nome;
 }
 @*<h2>
     DetalheCategoria</h2>*@
@@ -32,20 +32,22 @@
         </div>
     </div>
     <div class="right">
-        <input type="button" value="Ver Carrinho" onclick="window.location='#';" />
-        <input type="button" id="buttonComprarProdutos" value="Comprar Produtos" onclick="inserirCarrinho()" />
-        <input type="button" value="Fechar Compra" onclick="window.location='#';" />
-        <table border="1" bgcolor='yellow'>
+        <div class="buttons">
+            <input type="button" value="Ver Carrinho" onclick="window.location='#';" />
+            <input type="button" id="buttonComprarProdutos" value="Comprar Produtos" onclick="inserirCarrinho()" />
+            <input type="button" value="Fechar Compra" onclick="window.location='#';" />
+        </div>
+        <table>
             <tr>
-                <th bgcolor='#aaddbb'>
+                <th>
                 </th>
-                <th bgcolor='#aaddbb'>
+                <th>
                     Nome/Descrição
                 </th>
-                <th bgcolor='#aaddbb'>
+                <th>
                     Preço (R$)
                 </th>
-                <th bgcolor='#aaddbb'>
+                <th>
                 </th>
             </tr>
             @foreach (var x in Model.produtos)
