@@ -242,7 +242,7 @@
     <Content Include="Views\Loja\Detalhes.cshtml" />
     <Content Include="Views\Loja\Navegar.cshtml" />
     <Content Include="Views\Loja\Indice.cshtml" />
-    <Content Include="Views\Loja\FecharCompra.cshtml" />
+    <Content Include="Views\Carrinho\FecharCompra.cshtml" />
     <Content Include="Views\Categoria\Index.cshtml" />
     <Content Include="Views\Categoria\DetalheCategoria.cshtml" />
   </ItemGroup>

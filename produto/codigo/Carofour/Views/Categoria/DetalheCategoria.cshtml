@@ -34,7 +34,7 @@
     <div class="right">
         <div class="buttons">
             <input type="button" value="Ver Carrinho" onclick="window.location='#';" />
-            <input type="button" id="buttonComprarProdutos" value="Comprar Produtos" onclick="inserirCarrinho()" />
+            <input type="button" id="buttonComprarProdutos" value="Comprar Produtos" onclick="InserirProdutosCarrinho()" />
             <input type="button" value="Fechar Compra" onclick="window.location='#';" />
         </div>
         <table>
@@ -66,7 +66,7 @@
                         @x.preco
                     </td>
                     <td>
-                        <a href="#">comprar</a>
+                        <a href="#" onclick="InserirProduto()">comprar</a>
                     </td>
                 </tr>
             }
@@ -74,7 +74,12 @@
     </div>
 </div>
 <script>
-    document.getElementById("buttonComprarProdutos").onclick = function () {
+
+    function InserirProdutosCarrinho() {
         alert("Os produtos foram adicionados com sucesso em seu carrinho de compras!");
-    };
+    }
+
+    function InserirProduto() {
+        alert("O produto foi adicionado com sucesso em seu carrinho de compras!");
+    }
 </script>
