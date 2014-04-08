@@ -13,7 +13,73 @@
     }
 </div>
 
-<form>
+<script lang="javascript" type="text/javascript">
+    function validate() {
+        if (document.getElementById("nomeCompleto").value == "") {
+            alert("O campo nome é obrigatório");
+            document.getElementById("nomeCompleto").focus();
+            return false;
+        }
+
+        if (document.getElementById("email").value == "") {
+            alert("O campo email é obrigatório");
+            document.getElementById("email").focus();
+            return false;
+        }
+
+        if (document.getElementById("senha").value == "") {
+            alert("O campo senha é obrigatório");
+            document.getElementById("senha").focus();
+            return false;
+        }
+
+
+        if (document.getElementById("dataNascimento").value == "") {
+            alert("O campo data de Nascimento é obrigatório");
+            document.getElementById("dataNascimento").focus();
+            return false;
+        }
+
+
+        if (document.getElementById("sexo").value != 'F' && document.getElementById("sexo").value != 'M') {
+            alert("O campo sexo é obrigatório");
+            document.getElementById("sexo").focus();
+            return false;
+        }
+
+        if (document.getElementById("endereco").value == "") {
+            alert("O campo endereco é obrigatório");
+            document.getElementById("endereco").focus();
+            return false;
+        }
+
+        if (document.getElementById("telefone").value == "") {
+            alert("O campo telefone é obrigatório");
+            document.getElementById("telefon").focus();
+            return false;
+        }
+        return true;
+    }
+
+    function mascData(objeto, evento) {
+        if (evento.keyCode == 8 || evento.keyCode == 46) {
+            return true;
+        }
+        if (objeto.value.length == 10) {
+            return false;
+        }
+        if (evento.keyCode < 48 || evento.keyCode > 57) {
+            alert("Somente números");
+            return false;
+        }
+        if ((objeto.value.length == 2) || (objeto.value.length == 5)) {
+            objeto.value = objeto.value + '/';
+        }
+        return true;
+    }
+</script>
+
+<form action="~/Carrinho/FecharCompra" method="post">
     <div class="teste_left">
         <div class="left">
             <div class="alinhamento">
@@ -27,21 +93,22 @@
                     @Html.TextBoxFor(x => x.nomeCompleto)   
                     @Html.Label("E-mail:*")
                     @Html.TextBoxFor(x => x.email)
+                    @Html.Label("Senha:*");
+                    @Html.PasswordFor(x => x.senha)
                     @Html.Label("Data de Nascimento:*")
-                    @Html.TextBoxFor(x => x.dataNascimento, new {@class="campo_data"})            
+                    <input type="date" onkeypress="return mascData(this,event);" id="dataNascimento" value="@Model.dataNascimento" />
                     @Html.Label("Sexo:*");
                     @Html.RadioButtonFor(x => x.sexo, "F", new { @class = "teste" })
                     @Html.Label("Feminino", new { @class = "teste" })
                     @Html.RadioButtonFor(x => x.sexo, "M", new { @class = "teste" })
-                    @Html.Label("Masculino", new { @class = "teste" })
-           
+                    @Html.Label("Masculino", new { @class = "teste" })           
                     @Html.Label("Endereço:*")
                     @Html.TextBoxFor(x => x.endereco)
                     @Html.Label("Telefone:*")
                     @Html.TextBoxFor(x => x.telefone)
             
 
-                    <input type="submit" value="Enviar" name="Enviar" class="botao" />
+                    <input type="submit" value="Enviar" name="Enviar" class="botao" onclick="return validate()" />
  
                 }
             </div>
@@ -57,8 +124,8 @@
     <li>O cancelamento de sua compra poderá ser efetuada somente antes do envio do pedido.</li>
 </div>
 
-<div class="teste2_right" >
-    <h3> Valor total da Compra:</h3>
+<div class="teste2_right">
+    <h3>Valor total da Compra:</h3>
     <p id="valor_Compra">Valor da Compra + Frete</p>
 </div>
 

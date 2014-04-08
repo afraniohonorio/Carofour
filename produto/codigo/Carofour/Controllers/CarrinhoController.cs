@@ -45,7 +45,7 @@ namespace Carofour.Controllers
                 c.Add(cliente);
                 TempData["Mensagem"] = "O Cliente foi cadastrado com sucesso !";
             }
-            return View();
+            return View("FecharCompra", cliente);
 
         }
 
