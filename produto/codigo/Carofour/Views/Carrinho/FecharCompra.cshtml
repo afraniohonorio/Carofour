@@ -16,49 +16,50 @@
 <script lang="javascript" type="text/javascript">
     function validate() {
         if (document.getElementById("nomeCompleto").value == "") {
-            alert("O campo nome é obrigatório");
+            alert("O campo Nome é obrigatório");
             document.getElementById("nomeCompleto").focus();
             return false;
         }
 
         if (document.getElementById("email").value == "") {
-            alert("O campo email é obrigatório");
+            alert("O campo E-mail é obrigatório");
             document.getElementById("email").focus();
             return false;
         }
 
         if (document.getElementById("senha").value == "") {
-            alert("O campo senha é obrigatório");
+            alert("O campo Senha é obrigatório");
             document.getElementById("senha").focus();
             return false;
         }
 
 
         if (document.getElementById("dataNascimento").value == "") {
-            alert("O campo data de Nascimento é obrigatório");
+            alert("O campo Data de Nascimento é obrigatório");
             document.getElementById("dataNascimento").focus();
             return false;
         }
 
 
         if (document.getElementById("sexo").value != 'F' && document.getElementById("sexo").value != 'M') {
-            alert("O campo sexo é obrigatório");
+            alert("O campo Sexo é obrigatório");
             document.getElementById("sexo").focus();
             return false;
         }
 
         if (document.getElementById("endereco").value == "") {
-            alert("O campo endereco é obrigatório");
+            alert("O campo Endereço é obrigatório");
             document.getElementById("endereco").focus();
             return false;
         }
 
         if (document.getElementById("telefone").value == "") {
-            alert("O campo telefone é obrigatório");
+            alert("O campo Telefone é obrigatório");
             document.getElementById("telefon").focus();
             return false;
         }
-        return true;
+        location.href = "/Carrinho/InformacoesDaCompra";
+        event.preventDefault();
     }
 
     function mascData(objeto, evento) {
@@ -96,7 +97,7 @@
                     @Html.Label("Senha:*");
                     @Html.PasswordFor(x => x.senha)
                     @Html.Label("Data de Nascimento:*")
-                    <input type="date" onkeypress="return mascData(this,event);" id="dataNascimento" value="@Model.dataNascimento" />
+                    <input type="text" onkeypress="return mascData(this,event);" id="dataNascimento" value="@Model.dataNascimento" />
                     @Html.Label("Sexo:*");
                     @Html.RadioButtonFor(x => x.sexo, "F", new { @class = "teste" })
                     @Html.Label("Feminino", new { @class = "teste" })

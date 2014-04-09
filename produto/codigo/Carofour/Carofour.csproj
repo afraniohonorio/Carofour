@@ -146,8 +146,10 @@
   <ItemGroup>
     <Content Include="Content\Images\122_77.jpg" />
     <Content Include="Content\Images\background.jpeg" />
+    <Content Include="Content\Images\carneMoida.jpg" />
     <Content Include="Content\Images\carnes122_77.jpg" />
     <Content Include="Content\Images\Carofour.jpg" />
+    <Content Include="Content\Images\farinhaDeTrigo.jpg" />
     <Content Include="Content\Images\home-showcase.png" />
     <Content Include="Content\Images\Hortifrutgranjeiros122_77.jpg" />
     <Content Include="Content\Images\laticinios122_77.jpg" />
@@ -211,7 +213,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -241,10 +242,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Loja\Detalhes.cshtml" />
     <Content Include="Views\Loja\Navegar.cshtml" />
-    <Content Include="Views\Loja\Indice.cshtml" />
     <Content Include="Views\Carrinho\FecharCompra.cshtml" />
     <Content Include="Views\Categoria\Index.cshtml" />
     <Content Include="Views\Categoria\DetalheCategoria.cshtml" />
+    <Content Include="Views\Carrinho\VerCarrinho.cshtml" />
+    <Content Include="Views\Carrinho\InformacoesDaCompra.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
