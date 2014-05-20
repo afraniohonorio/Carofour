@@ -2,6 +2,8 @@ f# Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
 [Bb]in/
 [Oo]bj/
 
+# Ignorar todos os diretórios e arquivos em um diretório.
+obj/**/*
 
 # mstest test results
 TestResults
@@ -13,6 +15,7 @@ TestResults
 *.v11.suo
 *.user
 *.sln.docstates
+*.cache
 
 # Build results
 [Dd]ebug/
@@ -50,6 +53,8 @@ ipch/
 *.vsp
 *.vspx
 *.csproj
+*.suo
+*.cache
 
 # Guidance Automation Toolkit
 *.gpState

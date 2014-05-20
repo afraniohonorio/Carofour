@@ -1,36 +1,30 @@
 
-div.titulo
-{
+div.titulo {
     text-align: center;
 }
 
-#header
-{
-    font-family: Arial, 'Times New Roman' ,sans-serif;
+#header {
+    font-family: Arial, 'Times New Roman',sans-serif;
     color: white;
 }
 
 
-.titulo span
-{
+.titulo span {
     font-family: Comic Sans MS;
     color: Blue;
     font-size: 50px;
 }
 
-.titulo img
-{
+.titulo img {
     vertical-align: middle;
 }
 
-body
-{
+body {
     background-image: url(/Content/Images/background.jpeg);
     background-position: center; /*background-repeat: no-repeat;*/
 }
 
-table
-{
+table {
     position: relative;
     right: 0%;
     border: 2px;
@@ -39,25 +33,21 @@ table
     min-width: 500px;
 }
 
-th
-{
+th {
     background-color: #CDCDB4;
 }
 
-div a
-{
+div a {
     text-decoration: none;
 }
 
-.buttons
-{
+.buttons {
     text-align: center;
     position: relative;
     right: 10%;
 }
 
-.main-content
-{
+.main-content {
     color: black;
     text-align: center;
     line-height: 20px;
@@ -66,111 +56,98 @@ div a
     margin: 30px auto;
 }
 
-.main-content .left
-{
-    width: 450px;
-    float: left; /*border: 1px solid black;*/
-    height: 300px;
-    color: White;
-    font-size: 20px;
-}
+    .main-content .left {
+        width: 450px;
+        float: left; /*border: 1px solid black;*/
+        height: 300px;
+        color: black;
+        font-size: 20px;
+    }
 
-.main-content .right
-{
-    float: right; /*border: 1px solid black;*/
-    height: 300px;
-    width: 600px;
-}
+    .main-content .right {
+        float: right; /*border: 1px solid black;*/
+        height: 300px;
+        width: 600px;
+        color: black;
+    }
 
-.main-content .right span
-{
-    float: left; /*display: inline-block;*/
-    width: 250px;
-    height: 150px;
-    padding: 15px; /*border: 1px solid black;*/
-}
-.main-content .left
-{
-    width: 450px;
-    float: left; /*border: 1px solid black;*/
-    height: 300px;
-    color: White;
-    font-size: 20px;
-}
+        .main-content .right span {
+            float: left; /*display: inline-block;*/
+            width: 250px;
+            height: 150px;
+            padding: 15px; /*border: 1px solid black;*/
+        }
 
-.main-content .right
-{
-    float: right; /*border: 1px solid black;*/
-    height: 300px;
-    width: 600px;
-}
+    .main-content .left {
+        width: 450px;
+        float: left; /*border: 1px solid black;*/
+        height: 300px;
+        color: White;
+        font-size: 20px;
+    }
 
-.main-content .left
-{
-    width: 450px;
-    float: left; /*border: 1px solid black;*/
-    height: 300px;
-    color: White;
-    font-size: 20px;
-}
+    .main-content .right {
+        float: right; /*border: 1px solid black;*/
+        height: 300px;
+        width: 600px;
+    }
 
-.main-content .right
-{
-    float: right; /*border: 1px solid black;*/
-    height: 300px;
-    width: 600px;
-}
+    .main-content .left {
+        width: 450px;
+        float: left; /*border: 1px solid black;*/
+        height: 300px;
+        color: White;
+        font-size: 20px;
+    }
 
-.main-content .right span
-{
-    float: left; /*display: inline-block;*/
-    width: 250px;
-    height: 150px;
-    padding: 15px; /*border: 1px solid black;*/
-}
+    .main-content .right {
+        float: right; /*border: 1px solid black;*/
+        height: 300px;
+        width: 600px;
+    }
 
-.footer
-{
+        .main-content .right span {
+            float: left; /*display: inline-block;*/
+            width: 250px;
+            height: 150px;
+            padding: 15px; /*border: 1px solid black;*/
+        }
+
+.footer {
     bottom: 0;
     text-align: center;
     color: white;
 }
 
-label
-{
+label {
     display: inline-block;
     width: 155px;
     padding-bottom: 15px;
 }
 
-input
-{
-    margin-top: 10px;
+input {
+    margin-top: 5px;
     padding-right: 90px;
     margin-bottom: 5px;
 }
 
-.botao
-{
+.botao {
     padding-right: 10px;
 }
 
-.teste
-{
+.teste {
     width: 50px;
 }
 
-.mensagem
-{
+.mensagem {
     padding-top: 30px;
 }
 
 
-.teste_left
-{
-    font-family: Arial, 'Times New Roman' ,sans-serif;
+.teste_left {
+    font-family: Arial, 'Times New Roman',sans-serif;
     font-size: 15px;
-    margin-left: 100px;
+    margin-left: 90px;
     padding: 2px 5px 20px 10px;
     margin-left: 5px;
     margin-top: 40px;
@@ -179,78 +156,57 @@ input
     border: 1px solid;
 }
 
-.centro
-{
+.centro {
     text-align: center;
 }
 
-/*    font-family: Arial,'Times New Roman',sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    color: white;
-    margin-left: 100px;
-    padding: 2px 100px 20px 10px;
-    margin: 15px 700px 10px 90px;*/
-/* border: 1px solid red;*/
-/*position: absolute;
-    height: 400px;
-}*/
 
-.alinhamento
-{
+.alinhamento {
     text-align: left;
 }
 
-h3
-{
+h3 {
     padding-bottom: 20px;
     color: blue;
 }
 
-.botao
-{
+.botao {
     padding-right: 10px;
 }
 
-.teste
-{
+.teste {
     width: 50px;
 }
 
-.mensagem
-{
+.mensagem {
     padding-top: 30px;
 }
 
 
-.teste_left
-{
-    font-family: Arial, 'Times New Roman' ,sans-serif;
+.teste_left {
+    font-family: Arial, 'Times New Roman',sans-serif;
     font-size: 16px;
     font-weight: 600;
     color: white;
-    margin-left: 100px;
+    margin-left: 90px;
     padding: 2px 100px 20px 10px;
-    margin: 15px 700px 10px 90px; /* border: 1px solid red;*/
+    margin: 15px 720px 10px 90px;
     position: absolute;
     height: 400px;
 }
 
-.alinhamento
-{
+.alinhamento {
     text-align: left;
 }
 
-h3
-{
+h3 {
     padding-bottom: 20px;
     color: blue;
 }
 
-.teste_right
-{
+.teste_right {
     color: white;
-    font-family: Arial, 'Times New Roman' ,sans-serif;
+    font-family: Arial, 'Times New Roman',sans-serif;
     margin-bottom: 10px;
     margin-left: 650px;
     margin-top: 30px;
@@ -259,22 +215,45 @@ h3
     line-height: 25px;
 }
 
-.campo_data
-{
+.campo_data {
     font-size: 14px;
     padding-right: 10px;
 }
 
-.teste2_right
-{
+.teste2_right {
     width: 650px;
     margin-left: 650px;
     padding-bottom: 100px;
 }
 
-#valor_Compra
-{
+#valor_Compra {
     padding-left: 10px;
     font-size: 18px;
     color: white;
+}
+
+.subtotal {
+    text-align: right;
+}
+
+#tableCarrinho {
+    min-width: 1000px;
+}
+
+.numeroPedido {
+    text-align: center !important;
+    border: 2px solid white;
+    font-size: 20px !important;
+    color: white;
+}
+
+.borda {
+    border: 2px solid white;
+    font-size: 20px !important;
+    color: white !important;
+}
+
+#header .linguagem {
+    margin-left: 1000px !important;
+    color: black;
 }
