@@ -68,6 +68,5 @@ namespace Carofour.Controllers
             Categoria categoriaRetorno = categoriasMapeadas.Where(c => c.nome == categoria).FirstOrDefault() as Categoria;
             return View(categoriaRetorno);
         }
-
     }
 }
