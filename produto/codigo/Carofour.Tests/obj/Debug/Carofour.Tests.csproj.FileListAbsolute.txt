@@ -186,3 +186,4 @@ C:\Users\Afrânio\Desktop\Carofour-master\Carofour-master\produto\codigo\Carofou
 C:\Users\Afrânio\Desktop\Carofour-master\Carofour-master\produto\codigo\Carofour.Tests\obj\Debug\Carofour.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Afrânio\Desktop\Carofour-master\Carofour-master\produto\codigo\Carofour.Tests\obj\Debug\Carofour.Tests.dll
 C:\Users\Afrânio\Desktop\Carofour-master\Carofour-master\produto\codigo\Carofour.Tests\obj\Debug\Carofour.Tests.pdb
+C:\Users\iago.moura\Desenvolvimento\Puc\GitHub\produto\codigo\Carofour.Tests\bin\Debug\MySql.Data.dll
