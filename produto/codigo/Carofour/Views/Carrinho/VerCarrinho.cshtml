@@ -9,8 +9,8 @@
             <label>Subtotal: R$ 14,50</label>
         </div>
         <div class="buttons">
-            <input type="button" value="Limpar Carrinho" onclick="window.location = '#';" />
-            <input type="button" id="buttonComprarProdutos" value="Continuar compras" onclick="InserirProdutosCarrinho()" />
+            <input type="button" value="Limpar Carrinho" onclick="window.location.href='/Carrinho/LimparCarrinho';"  />
+            <input type="button" id="buttonComprarProdutos" value="Continuar compras" onclick="history.go(-1)" />
             <input type="button" value="Fechar Compra" onclick="" />
         </div>
         <table id="tableCarrinho">
@@ -41,7 +41,7 @@
                         R$ @item.preco
                     </td>
                     <td>
-                        <a onclick="alert('Não existem atualizações a serem aplicadas no momento.')" href="#">Atualizar</a> / <a onClick="return confirm('Deseja realmente remover este produto do carrinho?')" href="#">Remover</a>
+                       <a onclick="alert('Não existem atualizações a serem aplicadas no momento.')" href="/Carrinho/RetirarDoCarrinho?idProduto=@item.id">Atualizar</a> / <a onClick="return confirm('Deseja realmente remover este produto do carrinho?')" href="/Carrinho/RetirarDoCarrinho?idProduto=@item.id">Remover</a>
                     </td>
                 </tr>
             }

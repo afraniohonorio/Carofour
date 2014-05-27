@@ -1,27 +1,43 @@
-﻿@{
+﻿@model Carofour.Models.PedidoView
+@{
     ViewBag.Title = "InformacoesDaCompra";
 }
 
 <div class="main-content">
     <div class="numeroPedido">
-        <label>Número do Pedido: 12</label>
+        <label>Número do Pedido: @Model.idPedido</label>
     </div>    
 
     <br />
 
-    <div class="left borda">
-        <label>Produto: Carne Moída</label>
-        <label>Descrição: Carne Moída bonita</label>
-        <label>Preço: R$ 12,30</label>
+    <div class="left">
+        @foreach (var x in Model.listaProdutos)
+        {
+        <div>
+            <label>Produto: @x.nome</label>
+        </div>
+        <div>
+            <label>Descrição: @x.descricao</label>
+        </div>
+        <div>
+            <label>Preço: @x.preco.ToString("c")</label>
+        </div>
         <br />
-        <label>Produto: Farinha de Trigo</label>
-        <label>Descrição: Farinha de Trigo bonita</label>
-        <label>Preço: R$ 2,20</label>
+        }
     </div>
 
-    <div class="right borda">
-        <label>Nome do Usuário: Rodolfo</label>
-        <label>Endereço: Rua Panamá, 29, SC</label>
-        <label>E-mail: rodolfo@gmail.com</label>
+    <div class="detalhes">
+        <div>
+            <label>Nome do Usuário: @Model.nomeCompletoCliente</label>
+        </div>
+        <div>
+            <label>Endereço: @Model.enderecoCliente</label>
+        </div>
+        <div>
+            <label>E-mail: @Model.emailCliente</label>
+        </div>
+        <div>
+            <label>Telefone: @Model.telefoneCliente</label>
+        </div>
     </div>
 </div>

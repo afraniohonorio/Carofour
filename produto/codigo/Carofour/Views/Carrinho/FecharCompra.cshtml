@@ -58,7 +58,8 @@
             document.getElementById("telefon").focus();
             return false;
         }
-        location.href = "/Carrinho/InformacoesDaCompra";
+        return true;
+//        location.href = "/Carrinho/InformacoesDaCompra";
         event.preventDefault();
     }
 
@@ -98,7 +99,7 @@
                     @Html.PasswordFor(x => x.senha)
                     @Html.Label("Data de Nascimento:*")
                     <input type="text" onkeypress="return mascData(this,event);" id="dataNascimento" value="@Model.dataNascimento" />
-                    @Html.Label("Sexo:*");
+                    @Html.Label("Sexo:*", new { @class = "label_sexo" });
                     @Html.RadioButtonFor(x => x.sexo, "F", new { @class = "teste" })
                     @Html.Label("Feminino", new { @class = "teste" })
                     @Html.RadioButtonFor(x => x.sexo, "M", new { @class = "teste" })
@@ -108,7 +109,9 @@
                     @Html.Label("Telefone:*")
                     @Html.TextBoxFor(x => x.telefone)
             
-
+@*                    <form class="float_left" action="/Carrinho/InserirProduto?idProduto=@Model" method="post">
+                        <button class="btn btn-inverse" title="Comprar" type="submit" onclick="return validate()">Enviar</button>
+                    </form>*@
                     <input type="submit" value="Enviar" name="Enviar" class="botao" onclick="return validate()" />
  
                 }

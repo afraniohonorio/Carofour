@@ -34,9 +34,10 @@
     <div class="right">
         <div class="buttons">
             <input type="button" value="Ver Carrinho" onclick="window.location='/Carrinho/VerCarrinho';" />
-            <input type="button" id="buttonComprarProdutos" value="Comprar Produtos" onclick="InserirProdutosCarrinho()" />
+            <input type="button" id="buttonComprarProdutos" value="Comprar Produtos" onclick="comprarProdutos()" />
             <input type="button" value="Fechar Compra" onclick="window.location='/Carrinho/FecharCompra';" />
         </div>
+
         <table>
             <tr>
                 <th>
@@ -52,21 +53,23 @@
             </tr>
             @foreach (var x in Model.produtos)
             {
-                <tr>
+                <tr id="@x.id" >
                     <td>
                         @using (Html.BeginForm())
                         {
-                            @Html.CheckBox(@x.nome)
+                            @Html.CheckBox(@x.id.ToString(), new { @class = "produtos" })
                         }
                     </td>
                     <td>
                         @x.nome - @x.descricao
                     </td>
                     <td>
-                        @x.preco
+                        @x.preco.ToString("c")
                     </td>
                     <td>
-                        <a href="#" onclick="InserirProduto()">comprar</a>
+                <form id="formulario" class="float_left" action="/Carrinho/InserirProduto?idProduto=@x.id" method="post">
+                        <button class="btn btn-inverse" title="Comprar" type="submit">Comprar</button>
+                </form>
                     </td>
                 </tr>
             }
@@ -74,12 +77,42 @@
     </div>
 </div>
 <script>
+//    function InserirProdutosCarrinho() {
+//        alert("Os produtos foram adicionados com sucesso em seu carrinho de compras!");
+//    }
 
-    function InserirProdutosCarrinho() {
-        alert("Os produtos foram adicionados com sucesso em seu carrinho de compras!");
-    }
+//    function InserirProduto() {
+//        alert("O produto foi adicionado com sucesso em seu carrinho de compras!");
+//    }
 
-    function InserirProduto() {
-        alert("O produto foi adicionado com sucesso em seu carrinho de compras!");
+    function comprarProdutos() {
+        var selecionado = false;
+        var produtosSelecionados = "";
+        $(".produtos").each(function () {
+            if ($(this).is(':checked')) {
+                produtosSelecionados += $(this).attr("name") + ";";
+                selecionado = true;
+
+            }
+        });
+        if (!selecionado) {
+            alert("Para enviar um produto ao carrinho, você deve primeiro seleciona-lo.");
+            return false;
+        }
+        if (produtosSelecionados != "") {
+            var confirma = confirm("Gostaria de enviar o(s) produto(s)  para o carrinho?");
+            if (confirma == false) {
+                return false;
+            } else {
+//                $("#btnClose").attr("disabled", "enable");
+//                $("#btnFinalizar").attr("disabled", "enable");
+//                alert("Adicionado com sucesso");
+                $("#produtosCarrinho").val(produtosSelecionados);
+                $("#formulario").attr("action","/Carrinho/InserirProduto?idProduto=var".replace("var", produtosSelecionados));
+//                alert($("#formulario").attr("action").val());
+                $("#formulario").submit();
+            }
+        }
+
     }
 </script>

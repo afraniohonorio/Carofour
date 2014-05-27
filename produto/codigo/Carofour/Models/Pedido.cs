@@ -7,7 +7,9 @@ namespace Carofour.Models
 {
     public class Pedido
     {
-        public int numero { get; set; }
-        public virtual List<ItemPedido> listaPedidos { get; set; }
+        public int id { get; set; }
+        public DateTime data { get; set; }
+        public int idCliente { get; set; }
+        public virtual List<ItemPedido> listaItens { get; set; }
     }
 }

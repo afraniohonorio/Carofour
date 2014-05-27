@@ -91,6 +91,14 @@ div a {
         height: 300px;
         width: 600px;
     }
+    
+    .main-content .detalhes{
+        float: right; /*border: 1px solid black;*/
+        height: 300px;
+        width: 600px;
+        color: White;        
+        font-size: 20px;        
+    }
 
     .main-content .left {
         width: 450px;
@@ -113,15 +121,32 @@ div a {
             padding: 15px; /*border: 1px solid black;*/
         }
 
-.footer {
+.footer 
+{
+    position: absolute;
     bottom: 0;
     text-align: center;
     color: white;
+    margin-left: 30%;
+    font-style:oblique;
+    font-size: 30px !important;
 }
 
 label {
     display: inline-block;
     width: 155px;
+    padding-bottom: 15px;
+}
+
+.label_sexo {
+    display: inline-block;
+    width: 110px !important;
+    padding-bottom: 15px;
+}
+
+.label_detalhe_compra {
+    display: inline-block;
+    width: 110px !important;
     padding-bottom: 15px;
 }
 
@@ -153,7 +178,6 @@ input {
     margin-top: 40px;
     margin-right: 980px;
     margin-bottom: 10px;
-    border: 1px solid;
 }
 
 .centro {
@@ -208,7 +232,7 @@ h3 {
     color: white;
     font-family: Arial, 'Times New Roman',sans-serif;
     margin-bottom: 10px;
-    margin-left: 650px;
+    margin-left: 550px;
     margin-top: 30px;
     width: 650px;
     font-size: 18px;
@@ -222,7 +246,7 @@ h3 {
 
 .teste2_right {
     width: 650px;
-    margin-left: 650px;
+    margin-left: 550px;
     padding-bottom: 100px;
 }
 

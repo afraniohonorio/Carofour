@@ -7,7 +7,9 @@ namespace Carofour.Models
 {
     public class ItemPedido
     {
+        public int id { get; set; }
         public int quantidade { get; set; }
-        public Pedido pedido { get; set; }
+        public int idPedido { get; set; }
+        public int idProduto { get; set; }
     }
 }

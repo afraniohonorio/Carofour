@@ -13,7 +13,7 @@ namespace Carofour.DAO
         {
             get
             {
-                return @"SELECT Id, Nome, UrlImagem, Href FROM Categoria";
+                return @"SELECT Id, Nome, Url_Imagem, Href FROM Categoria";
             }
         }
 
@@ -21,7 +21,7 @@ namespace Carofour.DAO
         {
             get
             {
-                return @"SELECT Id, Nome, UrlImagem, Href FROM Categoria WHERE Id = ?Id";
+                return @"SELECT Id, Nome, Url_Imagem, Href FROM Categoria WHERE Id = ?Id";
             }
         }
 
@@ -36,7 +36,7 @@ namespace Carofour.DAO
             vo.href = Convert.ToString(row["Href"]);
             vo.id = Convert.ToInt32(row["Id"]);
             vo.nome = Convert.ToString(row["Nome"]);
-            vo.urlImagem = Convert.ToString(row["UrlImagem"]);
+            vo.urlImagem = Convert.ToString(row["Url_Imagem"]);
             return vo;
         }
     }

@@ -4,13 +4,25 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Carofour.Models;
+using Carofour.DAO;
 
 namespace Carofour.Controllers
 {
     public class CarrinhoController : Controller
     {
-        //
-        // GET: /Store/
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        //Insere produtos na sessão
+        public ActionResult InserirProduto(string idProduto)
+        {
+            
+            PedidoDAO pedidoDAO = new PedidoDAO();
+            ItemPedidoDAO itemPedidoDAO = new ItemPedidoDAO();
+
+            HttpContext.Session["ItensCarrinho"] = String.Format("{0}{1};", HttpContext.Session["ItensCarrinho"], idProduto);
+
+            return RedirectToAction("FecharCompra", "Carrinho");
+        }
 
         public ActionResult Indice()
         {
@@ -36,33 +48,135 @@ namespace Carofour.Controllers
             return View(modeloCategoria);
         }
 
+        //Finaliza a compra
         public ActionResult FecharCompra(Cliente cliente)
         {
-            List<Cliente> c = new List<Cliente>();
+            ItemPedido itemPedidoVO = new ItemPedido();
 
-            if (cliente.nomeCompleto != null)
+            try
             {
-                c.Add(cliente);
-                TempData["Mensagem"] = "O Cliente foi cadastrado com sucesso !";
+                if (!(String.IsNullOrEmpty(cliente.nomeCompleto) &&
+                    String.IsNullOrEmpty(cliente.senha) &&
+                    String.IsNullOrEmpty(cliente.email) &&
+                    String.IsNullOrEmpty(cliente.endereco) &&
+                    String.IsNullOrEmpty(cliente.telefone)) &&
+                    !String.IsNullOrEmpty(HttpContext.Session["ItensCarrinho"].ToString()))
+                {
+                    ClienteDAO clienteDAO = new ClienteDAO();
+
+                    //Inserindo o cliente
+                    cliente.id = clienteDAO.InserirCliente(cliente);
+
+                    if (cliente.id > 0)
+                    {
+                        PedidoDAO pedidoDAO = new PedidoDAO();
+
+                        //Criando o pedido para o cliente cadastrado anteriormente
+                        itemPedidoVO.idPedido = pedidoDAO.InserirPedido(cliente.id);
+
+                        if (itemPedidoVO.idPedido > 0)
+                        {
+                            ItemPedidoDAO itemPedidoDAO = new ItemPedidoDAO();
+                            List<Produto> produtos = new List<Produto>();
+                            ProdutoDAO produtoDAO = new ProdutoDAO();
+
+                            //Obtendo os produtos presentes no carrinho
+                            if (HttpContext.Session["ItensCarrinho"] != null)
+                            {
+                                string[] produtosSessao = HttpContext.Session["ItensCarrinho"].ToString().Split(';');
+
+                                foreach (string p in produtosSessao)
+                                {
+                                    if (p != "")
+                                    {
+                                        produtos.Add(produtoDAO.ObterPorId(Convert.ToInt32(p)));
+                                    }
+                                }
+                            }
+
+                            //Criando os itens para o pedido
+                            foreach (Produto p in produtos)
+                            {
+                                itemPedidoVO.quantidade = 1;
+                                itemPedidoVO.idProduto = p.id;
+
+                                itemPedidoDAO.InserirItemPedido(itemPedidoVO);
+                            }
+                            return this.InformacoesDaCompra(itemPedidoVO.idPedido);
+                        }
+                        else
+                        {
+                            return View("FecharCompra", cliente);
+                        }
+                    }
+                    else
+                    {
+                        return View("FecharCompra", cliente);
+                    }
+                }
+                else
+                {
+                    return View("FecharCompra", cliente);
+                }
             }
-            return View("FecharCompra", cliente);
+            catch (Exception ex)
+            {
+                return View("FecharCompra", cliente);
+            }
         }
 
-        public ActionResult VerCarrinho(Produto produto)
+        public ActionResult VerCarrinho()
         {
-            var produtos = new List<Produto>
-            { 
-                new Produto { id=2, nome = "Farinha de Trigo", descricao = "Farinha de Trigo bonita", preco = 2.20, urlImagem = "/Content/Images/farinhaDeTrigo.jpg"},
-                new Produto { id=2, nome = "Carne Moída", descricao = "Carne Moída bonita", preco = 12.30, urlImagem = "/Content/Images/carneMoida.jpg"}
-            };
-            return View(produtos);
+            List<Produto> produtos = new List<Produto>();
+            ProdutoDAO produtoDAO = new ProdutoDAO();
+
+            try
+            {
+                if (HttpContext.Session["ItensCarrinho"] != null)
+                {
+                    string[] produtosSessao = HttpContext.Session["ItensCarrinho"].ToString().Split(';');
+
+                    foreach (string p in produtosSessao)
+                    {
+                        if (p != "")
+                        {
+                            produtos.Add(produtoDAO.ObterPorId(Convert.ToInt32(p)));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return View("VerCarrinho", produtos);
         }
 
-        public ActionResult InformacoesDaCompra()
+        public ActionResult RetirarDoCarrinho(int idProduto)
         {
-            //List<Categoria> categoriasMapeadas = this.MapearCategorias();
-            //Categoria categoriaRetorno = categoriasMapeadas.Where(c => c.nome == categoria).FirstOrDefault() as Categoria;
-            return View();
+            if (!string.IsNullOrEmpty(idProduto.ToString()))
+            {
+                HttpContext.Session["ItensCarrinho"] = HttpContext.Session["ItensCarrinho"].ToString().Replace(string.Format("{0};", idProduto), "");
+            }
+
+            return this.VerCarrinho();
+        }
+
+        public ActionResult LimparCarrinho()
+        {
+            HttpContext.Session["ItensCarrinho"] = "";
+
+            return this.VerCarrinho();
+        }
+
+        public ActionResult InformacoesDaCompra(int idPedido)
+        {
+            PedidoDAO pedidoDAO = new PedidoDAO();
+            PedidoView pedidoViewVO = new PedidoView();
+
+            pedidoViewVO = pedidoDAO.ObterDetalhesPedido(idPedido);
+
+            return View("InformacoesDaCompra", pedidoViewVO);
         }
     }
 }
