@@ -172,6 +172,8 @@ namespace Carofour.Controllers
 
         public ActionResult InformacoesDaCompra(int idPedido)
         {
+            HttpContext.Session["ItensCarrinho"] = "";
+
             PedidoDAO pedidoDAO = new PedidoDAO();
             PedidoView pedidoViewVO = new PedidoView();
 
