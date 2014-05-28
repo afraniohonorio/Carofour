@@ -15,13 +15,14 @@ namespace Carofour.Controllers
         //Insere produtos na sessão
         public ActionResult InserirProduto(string idProduto)
         {
-            
+
             PedidoDAO pedidoDAO = new PedidoDAO();
             ItemPedidoDAO itemPedidoDAO = new ItemPedidoDAO();
 
             HttpContext.Session["ItensCarrinho"] = String.Format("{0}{1};", HttpContext.Session["ItensCarrinho"], idProduto);
 
-            return RedirectToAction("FecharCompra", "Carrinho");
+            return this.VerCarrinho();
+            //return RedirectToAction("FecharCompra", "Carrinho");
         }
 
         public ActionResult Indice()

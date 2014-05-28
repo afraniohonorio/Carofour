@@ -35,7 +35,7 @@
         <div class="buttons">
             <input type="button" value="Ver Carrinho" onclick="window.location='/Carrinho/VerCarrinho';" />
             <input type="button" id="buttonComprarProdutos" value="Comprar Produtos" onclick="comprarProdutos()" />
-            <input type="button" value="Fechar Compra" onclick="window.location='/Carrinho/FecharCompra';" />
+            <input type="button" value="Fechar Compra" id="buttonFecharCompra" onclick="window.location='/Carrinho/FecharCompra';" />
         </div>
 
         <table>
@@ -96,23 +96,19 @@
             }
         });
         if (!selecionado) {
-            alert("Para enviar um produto ao carrinho, você deve primeiro seleciona-lo.");
+            alert("Ooops :(  Não existem produtos selecionados.");
             return false;
         }
         if (produtosSelecionados != "") {
-            var confirma = confirm("Gostaria de enviar o(s) produto(s)  para o carrinho?");
+            var confirma = confirm("Confirma o envio destes produtos para o carrinho?");
             if (confirma == false) {
                 return false;
             } else {
-//                $("#btnClose").attr("disabled", "enable");
-//                $("#btnFinalizar").attr("disabled", "enable");
-//                alert("Adicionado com sucesso");
                 $("#produtosCarrinho").val(produtosSelecionados);
                 $("#formulario").attr("action","/Carrinho/InserirProduto?idProduto=var".replace("var", produtosSelecionados));
-//                alert($("#formulario").attr("action").val());
                 $("#formulario").submit();
+                alert("O(s) produto(s) foram adicionado(s) com sucesso ao seu carrinho de compras.");
             }
         }
-
     }
 </script>

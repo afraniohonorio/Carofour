@@ -98,7 +98,7 @@
                     @Html.Label("Senha:*");
                     @Html.PasswordFor(x => x.senha)
                     @Html.Label("Data de Nascimento:*")
-                    <input type="text" onkeypress="return mascData(this,event);" id="dataNascimento" value="@Model.dataNascimento" />
+                    <input type="text" onkeypress="return mascData(this,event);" id="dataNascimento" />
                     @Html.Label("Sexo:*", new { @class = "label_sexo" });
                     @Html.RadioButtonFor(x => x.sexo, "F", new { @class = "teste" })
                     @Html.Label("Feminino", new { @class = "teste" })
@@ -130,6 +130,6 @@
 
 <div class="teste2_right">
     <h3>Valor total da Compra:</h3>
-    <p id="valor_Compra">Valor da Compra + Frete</p>
+    <p id="valor_Compra">R$ 14,50 + R$ 10,00</p>
 </div>
 
