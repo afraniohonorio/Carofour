@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.8.2.min.js")" type="text/javascript"></script>
+</head>
+<body>
+    <div id="header">
+        <a class="linguagem" onclick="alert('Olá sinhô. Seu sistema já está em português ;p')"
+            href="">Português/</a><a onclick="alert('Ooops. Estamos teniendo algunos problemas técnicos. Culpar a la estagiário. Trate de usar la opción de traducir su página del navegador, intente más tarde o tener la oportunidad de aprender portugués, una acción maravillosa.')"
+                href="">Español</a>
+        <div class="titulo">
+            <a href="/Categoria/Index">
+                <img src="~/Content/Images/Carofourm.png" title="Carofour" />
+                <span>Carofour produtos e alimentos orgânicos</span></a>
+        </div>
+    </div>
+    <div id="main" class="corpo">
+        @RenderBody()
+    </div>
+    <div class="footer" id="footer">
+        Carofour 2012 - contato: contato@carofour.com.br
+    </div>
+</body>
+</html>

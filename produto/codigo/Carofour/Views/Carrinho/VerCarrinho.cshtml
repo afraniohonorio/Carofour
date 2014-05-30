@@ -1,0 +1,50 @@
+﻿@model List<Carofour.Models.Produto>
+@{
+    ViewBag.Title = "Carrinho de Compras";
+}
+
+<div class="main-content">
+    <div>
+        <div class="subtotal">
+            <label>Subtotal: R$ 14,50</label>
+        </div>
+        <div class="buttons">
+            <input type="button" value="Limpar Carrinho" onclick="window.location.href='/Carrinho/LimparCarrinho';"  />
+            <input type="button" id="buttonComprarProdutos" value="Continuar compras" onclick="history.go(-1)" />
+            <input type="button" value="Fechar Compra" onclick="window.location='/Carrinho/FecharCompra';" />
+        </div>
+        <table id="tableCarrinho">
+            <tr>
+                <th></th>
+                <th>Nome / Descrição
+                </th>
+                <th>Quantidade
+                </th>
+                <th>Preço (R$)
+                </th>
+
+                <th></th>
+                <th></th>
+            </tr>
+            @foreach (var item in @Model)
+            {
+                <tr>
+                    <td>
+                        <img src="@item.urlImagem" />
+                    </td>
+                    <td>
+                        @item.nome
+                    </td>
+                    <td>1
+                    </td>
+                    <td>
+                        R$ @item.preco
+                    </td>
+                    <td>
+                       <a onclick="alert('Não existem atualizações a serem aplicadas no momento.')" href="">Atualizar</a> / <a onClick="return confirm('Deseja realmente remover este produto do carrinho?')" href="/Carrinho/RetirarDoCarrinho?idProduto=@item.id">Remover</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

@@ -1,0 +1,135 @@
+﻿@model Carofour.Models.Cliente
+
+@{
+    
+    ViewBag.Title = "Fechamento da Compra";
+}
+
+
+<div class="mensagem">
+    @if (TempData["Mensagem"] != null)
+    {
+        <div>@TempData["Mensagem"]</div>
+    }
+</div>
+
+<script lang="javascript" type="text/javascript">
+    function validate() {
+        if (document.getElementById("nomeCompleto").value == "") {
+            alert("O campo Nome é obrigatório");
+            document.getElementById("nomeCompleto").focus();
+            return false;
+        }
+
+        if (document.getElementById("email").value == "") {
+            alert("O campo E-mail é obrigatório");
+            document.getElementById("email").focus();
+            return false;
+        }
+
+        if (document.getElementById("senha").value == "") {
+            alert("O campo Senha é obrigatório");
+            document.getElementById("senha").focus();
+            return false;
+        }
+
+
+        if (document.getElementById("dataNascimento").value == "") {
+            alert("O campo Data de Nascimento é obrigatório");
+            document.getElementById("dataNascimento").focus();
+            return false;
+        }
+
+
+        if (document.getElementById("sexo").value != 'F' && document.getElementById("sexo").value != 'M') {
+            alert("O campo Sexo é obrigatório");
+            document.getElementById("sexo").focus();
+            return false;
+        }
+
+        if (document.getElementById("endereco").value == "") {
+            alert("O campo Endereço é obrigatório");
+            document.getElementById("endereco").focus();
+            return false;
+        }
+
+        if (document.getElementById("telefone").value == "") {
+            alert("O campo Telefone é obrigatório");
+            document.getElementById("telefon").focus();
+            return false;
+        }
+        return true;
+//        location.href = "/Carrinho/InformacoesDaCompra";
+        event.preventDefault();
+    }
+
+    function mascData(objeto, evento) {
+        if (evento.keyCode == 8 || evento.keyCode == 46) {
+            return true;
+        }
+        if (objeto.value.length == 10) {
+            return false;
+        }
+        if (evento.keyCode < 48 || evento.keyCode > 57) {
+            alert("Somente números");
+            return false;
+        }
+        if ((objeto.value.length == 2) || (objeto.value.length == 5)) {
+            objeto.value = objeto.value + '/';
+        }
+        return true;
+    }
+</script>
+
+<form action="~/Carrinho/FecharCompra" method="post">
+    <div class="teste_left">
+        <div class="left">
+            <div class="alinhamento">
+                <h3>Dados do Cliente</h3>
+
+
+                @using (Html.BeginForm())
+                {
+                    @Html.HiddenFor(x => x.id)
+                    @Html.Label("Nome Completo:*")
+                    @Html.TextBoxFor(x => x.nomeCompleto)   
+                    @Html.Label("E-mail:*")
+                    @Html.TextBoxFor(x => x.email)
+                    @Html.Label("Senha:*");
+                    @Html.PasswordFor(x => x.senha)
+                    @Html.Label("Data de Nascimento:*")
+                    <input type="text" onkeypress="return mascData(this,event);" id="dataNascimento" />
+                    @Html.Label("Sexo:*", new { @class = "label_sexo" });
+                    @Html.RadioButtonFor(x => x.sexo, "F", new { @class = "teste" })
+                    @Html.Label("Feminino", new { @class = "teste" })
+                    @Html.RadioButtonFor(x => x.sexo, "M", new { @class = "teste" })
+                    @Html.Label("Masculino", new { @class = "teste" })           
+                    @Html.Label("Endereço:*")
+                    @Html.TextBoxFor(x => x.endereco)
+                    @Html.Label("Telefone:*")
+                    @Html.TextBoxFor(x => x.telefone)
+            
+@*                    <form class="float_left" action="/Carrinho/InserirProduto?idProduto=@Model" method="post">
+                        <button class="btn btn-inverse" title="Comprar" type="submit" onclick="return validate()">Enviar</button>
+                    </form>*@
+                    <input type="submit" value="Enviar" name="Enviar" class="botao" onclick="return validate()" />
+ 
+                }
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="teste_right">
+    <h3>Condições de Compra</h3>
+    <li>Alguns produtos do site estão expostos em tamanho maior ou menor que o natural.</li>
+    <li>A disponibilidade dos produtos está sujeita aos seus respectivos estoques.</li>
+    <li>Respeitar a data de entrega estipulado no site.</li>
+    <li>O cancelamento de sua compra poderá ser efetuada somente antes do envio do pedido.</li>
+</div>
+
+<div class="teste2_right">
+    <h3>Valor total da Compra:</h3>
+    <p id="valor_Compra">R$ 14,50 + R$ 10,00</p>
+</div>
+

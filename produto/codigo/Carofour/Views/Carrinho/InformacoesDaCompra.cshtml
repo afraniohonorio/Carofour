@@ -1,0 +1,43 @@
+﻿@model Carofour.Models.PedidoView
+@{
+    ViewBag.Title = "InformacoesDaCompra";
+}
+
+<div class="main-content">
+    <div class="numeroPedido">
+        <label>Número do Pedido: @Model.idPedido</label>
+    </div>    
+
+    <br />
+
+    <div class="left">
+        @foreach (var x in Model.listaProdutos)
+        {
+        <div>
+            <label>Produto: @x.nome</label>
+        </div>
+        <div>
+            <label>Descrição: @x.descricao</label>
+        </div>
+        <div>
+            <label>Preço: @x.preco.ToString("c")</label>
+        </div>
+        <br />
+        }
+    </div>
+
+    <div class="detalhes">
+        <div>
+            <label>Nome do Usuário: @Model.nomeCompletoCliente</label>
+        </div>
+        <div>
+            <label>Endereço: @Model.enderecoCliente</label>
+        </div>
+        <div>
+            <label>E-mail: @Model.emailCliente</label>
+        </div>
+        <div>
+            <label>Telefone: @Model.telefoneCliente</label>
+        </div>
+    </div>
+</div>

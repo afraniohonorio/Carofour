@@ -1,0 +1,114 @@
+﻿@model Carofour.Models.Categoria
+@{
+    ViewBag.Title = "Produtos da Categoria " + @Model.nome;
+}
+@*<h2>
+    DetalheCategoria</h2>*@
+<div class="main-content">
+    <div class="left">
+        <div>
+            <a href="/Categoria/DetalheCategoria?categoria=Laticínios">
+                <img src="/Content/Images/laticinios122_77.jpg" title="frutas" />
+                <label>
+                    Laticínios</label></a>
+        </div>
+        <div>
+            <a href="/Categoria/DetalheCategoria?categoria=Carnes">
+                <img src="/Content/Images/carnes122_77.jpg" title="frutas" />
+                <label>
+                    Carnes</label></a>
+        </div>
+        <div>
+            <a href="/Categoria/DetalheCategoria?categoria=Padaria">
+                <img src="/Content/Images/padaria122_77.jpg" title="frutas" />
+                <label>
+                    Padaria</label></a>
+        </div>
+        <div>
+            <a href="/Categoria/DetalheCategoria?categoria=Hortifrutigranjeiros">
+                <img src="/Content/Images/Hortifrutgranjeiros122_77.jpg" title="frutas" />
+                <label>
+                    Hortifrutigranjeiros</label></a>
+        </div>
+    </div>
+    <div class="right">
+        <div class="buttons">
+            <input type="button" value="Ver Carrinho" onclick="window.location='/Carrinho/VerCarrinho';" />
+            <input type="button" id="buttonComprarProdutos" value="Comprar Produtos" onclick="comprarProdutos()" />
+            <input type="button" value="Fechar Compra" id="buttonFecharCompra" onclick="window.location='/Carrinho/FecharCompra';" />
+        </div>
+
+        <table>
+            <tr>
+                <th>
+                </th>
+                <th>
+                    Nome/Descrição
+                </th>
+                <th>
+                    Preço (R$)
+                </th>
+                <th>
+                </th>
+            </tr>
+            @foreach (var x in Model.produtos)
+            {
+                <tr id="@x.id" >
+                    <td>
+                        @using (Html.BeginForm())
+                        {
+                            @Html.CheckBox(@x.id.ToString(), new { @class = "produtos" })
+                        }
+                    </td>
+                    <td>
+                        @x.nome - @x.descricao
+                    </td>
+                    <td>
+                        @x.preco.ToString("c")
+                    </td>
+                    <td>
+                <form id="formulario" class="float_left" action="/Carrinho/InserirProduto?idProduto=@x.id" method="post">
+                        <button class="btn btn-inverse" title="Comprar" type="submit">Comprar</button>
+                </form>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+<script>
+//    function InserirProdutosCarrinho() {
+//        alert("Os produtos foram adicionados com sucesso em seu carrinho de compras!");
+//    }
+
+//    function InserirProduto() {
+//        alert("O produto foi adicionado com sucesso em seu carrinho de compras!");
+//    }
+
+    function comprarProdutos() {
+        var selecionado = false;
+        var produtosSelecionados = "";
+        $(".produtos").each(function () {
+            if ($(this).is(':checked')) {
+                produtosSelecionados += $(this).attr("name") + ";";
+                selecionado = true;
+
+            }
+        });
+        if (!selecionado) {
+            alert("Ooops :(  Não existem produtos selecionados.");
+            return false;
+        }
+        if (produtosSelecionados != "") {
+            var confirma = confirm("Confirma o envio destes produtos para o carrinho?");
+            if (confirma == false) {
+                return false;
+            } else {
+                $("#produtosCarrinho").val(produtosSelecionados);
+                $("#formulario").attr("action","/Carrinho/InserirProduto?idProduto=var".replace("var", produtosSelecionados));
+                $("#formulario").submit();
+                alert("O(s) produto(s) foram adicionado(s) com sucesso ao seu carrinho de compras.");
+            }
+        }
+    }
+</script>
